@@ -1,6 +1,9 @@
-package leapYear;
+package leapyear;
 
 import org.junit.jupiter.api.Test;
+
+import leapyear.LeapYear;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class IsLeapYearTest {

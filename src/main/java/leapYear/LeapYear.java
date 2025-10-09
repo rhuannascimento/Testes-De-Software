@@ -1,4 +1,4 @@
-package leapYear;
+package leapyear;
 
 public class LeapYear {
     public static boolean isLeapYear(int a) {
