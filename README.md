@@ -54,4 +54,26 @@ mvn compile
 mvn test
 ```
 
+2. Scripts úteis
+
+Há um script `test.sh` no root do projeto para facilitar executar uma classe `main` via Maven. Ele aceita o nome fully-qualified da classe principal como primeiro argumento. Exemplos:
+
+```bash
+# executar a classe padrão (StringSearchProgram)
+./test.sh
+
+# executar a classe Main do módulo stringsearch
+./test.sh stringsearch.MainSearch
+```
+
+O `test.sh` faz internamente:
+
+```bash
+mvn compile exec:java -Dexec.mainClass="$MAIN_CLASS"
+```
+
+3. Observações
+
+- Garanta que o script seja executável: `chmod +x test.sh`.
+
 
