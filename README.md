@@ -52,6 +52,29 @@ Testes:
 - `src/test/java/stringsearch/StringSearchTest.java`
 - `src/test/java/stringsearch/StringSearchAdvancedTest.java`
 
+### 4) triangle
+
+Classifica triângulos a partir dos comprimentos dos lados e valida se a entrada forma um triângulo. O método principal retorna uma das strings: `Equilateral`, `Isosceles`, `Scalene` ou `Invalid` (para entradas inválidas).
+
+- `Triangle.classifyTriangle(int a, int b, int c)`: valida lados positivos, verifica a desigualdade triangular (a + b > c, a + c > b, b + c > a) e classifica:
+	- `Equilateral` quando a = b = c
+	- `Isosceles` quando dois lados são iguais
+	- `Scalene` quando todos os lados são diferentes
+	- `Invalid` se algum lado for não positivo ou violar a desigualdade triangular
+
+Abordagem de testes: uso de Classes de Equivalência e Análise de Valor Limite, cobrindo, por exemplo:
+
+- Mínimo válido: (1, 1, 1) → `Equilateral`
+- Abaixo do limite: (0, 1, 1) → `Invalid`
+- Fronteira da desigualdade: (1, 1, 2) → `Invalid`
+- Soma igual e menor que o terceiro lado: (2, 3, 5) e (2, 3, 6) → `Invalid`
+- Casos típicos válidos: (3, 4, 5) → `Scalene`, (4, 4, 2) → `Isosceles`, (2, 3, 4) → `Scalene`
+
+Arquivos relevantes:
+
+- `src/main/java/triangle/Triangle.java`
+- `src/test/java/triangle/TriangleTest.java`
+
 ## Como executar e testar (Maven)
 
 No diretório do projeto:
