@@ -30,7 +30,34 @@ Arquivos relevantes:
 - `src/main/java/leapyear/LeapYear.java`
 - `src/test/java/leapyear/IsLeapYearTest.java`
 
-### 3) stringsearch
+### 3) mcdc
+
+Implementa um exercício de cobertura MC/DC (Modified Condition/Decision Coverage) com condições compostas. A classe possui dois atributos de estado (`x` e `y`) que são modificados conforme condições lógicas.
+
+Principais características em `Mcdc.java`:
+
+- `mcdc(int a, int b, int c, int d)`: avalia duas condições independentes:
+  - Se `a > 0` **E** `c == 1`, incrementa `x` em 1.
+  - Se `b == 3` **OU** `d < 0`, zera `y`.
+- Atributos: `x` (inicia em 0) e `y` (inicia em 1).
+
+Estratégia de teste (MC/DC):
+
+Os testes garantem que cada condição (`a > 0`, `c == 1`, `b == 3`, `d < 0`) influencie independentemente o resultado da decisão, exercitando:
+
+- **T1**: `a=true, c=true` → `x` incrementado
+- **T2**: `a=false, c=true` → `x` não muda (mostra efeito de `a`)
+- **T3**: `a=true, c=false` → `x` não muda (mostra efeito de `c`)
+- **T4**: `b=true, d=false` → `y` zerado (mostra efeito de `b`)
+- **T5**: `b=false, d=false` → `y` não muda
+- **T6**: `b=false, d=true` → `y` zerado (mostra efeito de `d`)
+
+Arquivos relevantes:
+
+- `src/main/java/mcdc/Mcdc.java`
+- `src/test/java/mcdc/McdcTest.java`
+
+### 4) stringsearch
 
 Fornece utilitários para procurar a primeira ocorrência de um caractere em uma cadeia, além de um pequeno programa interativo de linha de comando.
 
@@ -52,7 +79,7 @@ Testes:
 - `src/test/java/stringsearch/StringSearchTest.java`
 - `src/test/java/stringsearch/StringSearchAdvancedTest.java`
 
-### 4) triangle
+### 5) triangle
 
 Classifica triângulos a partir dos comprimentos dos lados e valida se a entrada forma um triângulo. O método principal retorna uma das strings: `Equilateral`, `Isosceles`, `Scalene` ou `Invalid` (para entradas inválidas).
 
